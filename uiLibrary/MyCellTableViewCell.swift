@@ -18,10 +18,13 @@ class MyCellTableViewCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+    }
+    
+    func prepareView(){
         let mapView = MKMapView()
         
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "profile")
+        imageView.image = UIImage(named: "icon")
         
         let imageLabel = UILabel()
         imageLabel.text = "image"
@@ -38,6 +41,4 @@ class MyCellTableViewCell: UITableViewCell {
         
         imageView.addSubviewGrid(imageLabel, grid: [0, 0, 1, 1], collNumber: 1, rowNumber: 1)
     }
-    
-    
 }
