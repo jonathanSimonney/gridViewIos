@@ -20,7 +20,7 @@ class MyCellTableViewCell: UITableViewCell {
         super.layoutSubviews()
     }
     
-    func prepareView(index: Int){
+    func prepareView(index: Int, label: String){
         let mapView = MKMapView()
         if (index == 0){
             var mapRegion = MKCoordinateRegion();
@@ -38,7 +38,7 @@ class MyCellTableViewCell: UITableViewCell {
         imageView.image = UIImage(named: "icon")
         
         let imageLabel = UILabel()
-        imageLabel.text = "image"
+        imageLabel.text = label
         imageLabel.backgroundColor = UIColor(white: 1, alpha: CGFloat(index)/5)
         imageLabel.textAlignment = .center
         
