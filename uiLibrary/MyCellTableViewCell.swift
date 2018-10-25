@@ -20,15 +20,26 @@ class MyCellTableViewCell: UITableViewCell {
         super.layoutSubviews()
     }
     
-    func prepareView(){
+    func prepareView(index: Int){
         let mapView = MKMapView()
+        if (index == 0){
+            var mapRegion = MKCoordinateRegion();
+            var coordinate = CLLocationCoordinate2D();
+            coordinate.latitude = 48.866292
+            coordinate.longitude = 2.373542
+            mapRegion.center = coordinate;
+            mapRegion.span.latitudeDelta = 0.02;
+            mapRegion.span.longitudeDelta = 0.02;
+            
+            mapView.setRegion(mapRegion, animated: false)
+        }
         
         let imageView = UIImageView()
         imageView.image = UIImage(named: "icon")
         
         let imageLabel = UILabel()
         imageLabel.text = "image"
-        imageLabel.backgroundColor = UIColor(white: 1, alpha: 0.2)
+        imageLabel.backgroundColor = UIColor(white: 1, alpha: CGFloat(index)/5)
         imageLabel.textAlignment = .center
         
         let buttonView = UIButton()

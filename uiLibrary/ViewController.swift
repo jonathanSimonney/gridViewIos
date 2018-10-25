@@ -8,7 +8,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath) as! MyCellTableViewCell
         cell.textLabel!.text = "Test \(indexPath.row)"
-        cell.prepareView()
+        cell.prepareView(index: indexPath.row)
         
         return cell
     }
